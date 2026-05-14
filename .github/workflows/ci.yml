@@ -73,7 +73,14 @@ jobs:
           fetch-depth: 1
 
       - name: Run Gitleaks
-        uses: gitleaks/gitleaks-action@v2
+        run: |
+          gitleaks detect \
+            --redact \
+            --exit-code 2 \
+            --report-format sarif \
+            --report-path results.sarif \
+            --log-level info
+           # Removed: --log-opts=-1 and -v flag to prevent scanning entire history
 
   build_and_push:
     runs-on: ubuntu-latest
