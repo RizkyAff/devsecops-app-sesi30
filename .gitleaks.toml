@@ -1,8 +1,6 @@
-```toml id="h6w2yr"
 [allowlist]
 description = "Allow false positive README example"
 
 regexes = [
-  '''BUNDLE_ENTERPRISE__CONTRIBSYS__COM'''
+  "BUNDLE_ENTERPRISE__CONTRIBSYS__COM"
 ]
-```
